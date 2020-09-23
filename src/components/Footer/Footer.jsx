@@ -14,10 +14,10 @@ const Footer = () => {
                     </div>
                     <div className="col-md-3 col-md-offset-1">
                         <div className="social-links">
-                            <a href="#facebook"><i className="fa fa-facebook"></i></a>
-                            <a href="#twitter"><i className="fa fa-twitter"></i></a>
-                            <a href="#google"><i className="fa fa-google-plus"></i></a>
-                            <a href="#pinterest"><i className="fa fa-pinterest"></i></a>
+                            <a target={"_blank"} href="live:browndesmond30_2"><i className="fa fa-skype"></i></a>
+                            <a target={"_blank"} href="https://github.com/kali-physi-hacker"><i className="fa fa-github"></i></a>
+                            <a target={"_blank"} href="https://web.facebook.com/kali.junior.3192/"><i className="fa fa-facebook"></i></a>
+                            <a target={"_blank"} href="https://twitter.com/Desmond956"><i className="fa fa-twitter"></i></a>
                         </div>
                     </div>
                 </div>

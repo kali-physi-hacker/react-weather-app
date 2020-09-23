@@ -49,7 +49,7 @@ const Main = (props) => {
                                         </div>
                                         {
                                             remainingSearchHistory.map(history => (
-                                                    <div className="forecast">
+                                                    <div key={history.result.dt} className="forecast">
                                                         <div className="forecast-header">
                                                             <div className="day">{history.date.day}</div>
                                                         </div>
