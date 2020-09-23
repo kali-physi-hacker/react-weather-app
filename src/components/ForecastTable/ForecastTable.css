@@ -1,0 +1,29 @@
+.forecast-table {
+    animation: moveIn 1.2s ease-in;
+}
+
+.degree {
+    position: relative;
+}
+
+.forecast-content {
+    position: relative;
+}
+
+.weather-info {
+    position: absolute;
+    right: 7rem;
+}
+
+.weather-info h4 {
+    font-size: 28px;
+}
+
+@keyframes moveIn {
+    0% {
+        transform: translateY(20%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}

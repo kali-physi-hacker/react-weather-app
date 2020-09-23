@@ -1,0 +1,59 @@
+@import url('../../variables.css');
+
+#findButton  {
+    background-color: var(--pink)!important;
+}
+
+.find-location .search-result{
+    width: 100%;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    list-style-type: none;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    position: absolute;
+    z-index: 2;
+    background-color: var(--pink);
+}
+
+.search-result li {
+    display: flex;
+    align-items: center;
+    padding: 0.3rem 2rem 0.3rem 0;
+    border-bottom: 3px solid #ca3e74;
+    cursor: pointer;
+}
+
+.search-result li .postal-code {
+    /* background: blue; */
+    border-right: 3px solid #ca3e74;
+    padding: 0.4rem 2rem;
+    margin-right: 3rem;
+    width: 100px;
+    color: #fff;
+}
+.search-result li:last-child {
+    border-bottom: none;
+}
+
+.search-result li:last-child:hover {
+    background: var(--pink);
+}
+
+.search-result :hover {
+    background-color: #cf326e;
+}
+
+.search-result .meta {
+    padding-top: 0.4rem;
+}
+
+.search-result .meta .country {
+    font-weight: bold;
+    color: white;
+    font-size: 18px;
+}
+
+.search-result .meta .city {
+    font-size: 12px;
+    color: #fff;
+}

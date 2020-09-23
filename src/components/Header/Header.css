@@ -1,0 +1,10 @@
+@import url('../../variables.css');
+
+
+#header {
+    border-bottom: 5px solid var(--pink);
+}
+.main-navigation .menu .menu-item.current-menu-item a, .main-navigation .menu .menu-item:hover a{
+    border-color: var(--pink);
+    color: var(--pink);
+}
