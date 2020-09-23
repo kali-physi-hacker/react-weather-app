@@ -4,6 +4,7 @@ import {getDayOfWeekName, toCelsius, getWeatherIcon, rotateCompass, getCountry} 
 import umberellaIcon from "../../static/images/icon-umberella.png";
 import windIcon from "../../static/images/icon-wind.png";
 import compassIcon from "../../static/images/icon-compass.png";
+import weatherMan from '../../static/images/weather_man.svg';
 
 
 const Main = (props) => {
@@ -12,13 +13,14 @@ const Main = (props) => {
     const country = getCountry(firstSearchHistory.result.sys.country);
     const remainingSearchHistory = props.lastFiveSearches.slice(1, props.lastFiveSearches.length)
     return (
-        <div>
+        <div style={{position: "relative"}}>
+            {/*<img style={{position: "absolute", top: "-12rem", zIndex: -2}} src={weatherMan} alt=""/>*/}
             {
                 props.lastFiveSearches.length > 0 ?
                     <h4 style={{textAlign: "center", fontSize: 28, marginTop: "5rem"}}>Your Search History</h4>
                 : null
             }
-        <main style={{marginTop: "7rem"}} className="main-content">
+        <main style={{marginTop: "7rem", zIndex: 2}} className="main-content">
             <div className="fullwidth-block">
                 <div className="container">
                     {props.lastFiveSearches.length > 0 ?
@@ -26,7 +28,7 @@ const Main = (props) => {
                             <div className="forecast-table">
                                 <div className="container">
                                     <div className="forecast-container">
-                                        <div className="today forecast">
+                                        <div  className="today forecast">
                                             <div className="forecast-header">
                                                 <div className="day">{firstSearchHistory.date.day}</div>
                                                 <div
