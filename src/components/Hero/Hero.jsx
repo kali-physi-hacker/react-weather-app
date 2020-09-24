@@ -3,7 +3,7 @@ import mountainImage from '../../static/images/mountain.jpg';
 import './Hero.css';
 
 // Some helper functions here
-import {getDayOfWeekName, getMonthName, getWeatherByCity} from "../../utils";
+import {getCountry, getDayOfWeekName, getMonthName, getWeatherByCity, isRegion} from "../../utils";
 
 const countries = require('full-countries-cities').getCountries()
 
@@ -23,8 +23,10 @@ const Hero = props => {
     });
 
     const searchCity = cityName => {
-        const city = countries.find(country => country.capital === cityName);
-        const country = countries.find(country=> country.name.common === cityName);
+        const city = countries.find(country => country.capital.toLowerCase() === cityName.toLowerCase());
+        const country = countries.find(country=> country.name.common.toLowerCase() === cityName.toLowerCase());
+        console.log("City: ", city)
+        console.log("Country: ", country)
         if (city === undefined && country === undefined) {
             return false;
         }
@@ -57,15 +59,18 @@ const Hero = props => {
 
     const updateWeatherView = (city) => {
         props.setLoading(true);
-        if (searchCity(city)) {
+        if (searchCity(city) || isRegion(city || searchCity(city))) {
             getWeatherByCity(city, props.setCurrentWeather)
             props.setLoading(false);
             setMatchCountries([])
             props.setErrorMessage("");
             const historyItem = getSearchHistoryObject(city);
-            props.updateSearchHistory(historyItem)
+            if (historyItem.result !== null) {
+                props.updateSearchHistory(historyItem)
+            }
         }else{
             props.setErrorMessage(`Sorry "${city}" is not a valid city`)
+            console.log(searchCity(city))
         }
     }
 

@@ -1,20 +1,16 @@
 import React from 'react'
-import ForecastTableWidget from "../ForecastTable/ForecastTableWidget";
-import {getDayOfWeekName, toCelsius, getWeatherIcon, rotateCompass, getCountry} from "../../utils";
+import {toCelsius, getWeatherIcon, rotateCompass, getCountry} from "../../utils";
 import umberellaIcon from "../../static/images/icon-umberella.png";
 import windIcon from "../../static/images/icon-wind.png";
 import compassIcon from "../../static/images/icon-compass.png";
-import weatherMan from '../../static/images/weather_man.svg';
 
 
 const Main = (props) => {
     const firstSearchHistory = props.lastFiveSearches[0];
-    // console.log(firstSearchHistory)
-    const country = getCountry(firstSearchHistory.result.sys.country);
+    const country = firstSearchHistory !== undefined ? getCountry(firstSearchHistory.result.sys.country) : null;
     const remainingSearchHistory = props.lastFiveSearches.slice(1, props.lastFiveSearches.length)
     return (
         <div style={{position: "relative"}}>
-            {/*<img style={{position: "absolute", top: "-12rem", zIndex: -2}} src={weatherMan} alt=""/>*/}
             {
                 props.lastFiveSearches.length > 0 ?
                     <h4 style={{textAlign: "center", fontSize: 28, marginTop: "5rem"}}>Your Search History</h4>

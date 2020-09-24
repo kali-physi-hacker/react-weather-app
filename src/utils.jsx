@@ -69,10 +69,14 @@ export const getWeatherByCoords = (coords, success) => {
 export const getWeatherByCity = (city, success) => {
     const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`;
     fetch(API_URL)
-        .then(response=> response.json())
-        .then(data=> {
-            success(data)
-        })
+        .then(response=> {
+            console.log(response);
+            response.json()
+                .then(data=> {
+                success(data);
+                })
+            }
+        )
 }
 
 export const getWeatherIcon = code => (`http://openweathermap.org/img/w/${code}.png`);
@@ -106,3 +110,11 @@ export const getCoords = (successCallback, errorCallback) => {
 
 const countries = require('full-countries-cities').getCountries();
 export const getCountry = shortName => countries.find(country=> country.cca2 === shortName);
+
+
+// export const isCountry = countryName => countries.find(country=> )
+
+
+const regions = require('full-countries-cities').getRegions();
+export const isRegion = regionName => regions.find(region=> region.name.toLowerCase()===regionName.toLowerCase() ? true : false);
+
