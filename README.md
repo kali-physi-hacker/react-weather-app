@@ -1,3 +1,7 @@
+![Current Weather Loading](public/project-images/img-1.png)
+![Weather Loaded with Last Five Search Histories](public/project-images/img-2.png)
+![Weather App with footer](public/project-images/img-3.png)
+
 ## Project Description
 A minimal weather app written in react to test fundamental
 concepts of the react library.
