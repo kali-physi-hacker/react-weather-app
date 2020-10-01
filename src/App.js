@@ -28,9 +28,7 @@ function App() {
       setCurrentWeather(null)
   }
 
-    // console.log(lastFiveSearches)
-
-
+  
   const updateSearchHistory = (searchItem) => {
       let historyArray = lastFiveSearches;
       if (historyArray.length < 5) {
